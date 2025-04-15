@@ -3,3 +3,5 @@ openai
 elevenlabs
 python-dotenv
 kani
+kani[openai]
+kani[dependencies]
