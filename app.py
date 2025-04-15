@@ -11,15 +11,14 @@ from kani.engines.openai import OpenAIEngine
 # Load environment variables
 load_dotenv()
 
-# Set your API keys
-openai.api_key = os.getenv("OPENAI_API_KEY")
-eleven_api_key = os.getenv("ELEVEN_API_KEY")
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+eleven_api_key = st.secrets["ELEVEN_API_KEY"]
 
 # Initialize ElevenLabs client
 eleven = ElevenLabs(api_key=eleven_api_key)
 
 # Custom voice ID for Angela
-ANGELA_VOICE_ID = "ANGELA_VOICE_ID"
+ANGELA_VOICE_ID = st.secrets["ANGELA_VOICE_ID"]
 
 # Streamlit UI setup
 st.set_page_config(page_title="Chat with Angela", page_icon="💬")
